@@ -1,23 +1,25 @@
 <template>
     <div class="container">
-      <nav-link></nav-link>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-
-              <router-view></router-view>
+                <h1>Routing</h1>
+                <hr>
+                <router-view name="header-top"></router-view>
+                <router-view></router-view>
+                <router-view name="header-bottom"></router-view>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
 </template>
+
 <script>
-import header from "./components/shared/Header.vue"
-export default {
-  components:{
-    navLink:header
-  }
-
-}
+    import Header from './components/Header.vue';
+    export default {
+        components: {
+            appHeader: Header
+        }
+    }
 </script>
-<style scoped>
 
+<style>
 </style>

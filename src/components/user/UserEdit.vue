@@ -1,6 +1,7 @@
 <template>
-<div>
-  <h2>This is the Edit page</h2>
-  <button class="btn btn-primary" :to="'user/'+ this.params.id +'/details'">Details</button>
-</div>
+    <div>
+        <h3>Edit the User</h3>
+        <p>Locale: {{ $route.query.locale }}</p>
+        <p>Analytics: {{ $route.query.q }}</p>
+    </div>
 </template>
