@@ -5,24 +5,31 @@ import UserEdit from "./components/user/UserEdit.vue"
 import UserStart from "./components/user/UserStart.vue"
 export const routes = [{
     path: '',
-    component: Home
+    component: Home,
+    name: "home"
   },
   {
     path: '/user',
-    component: User
-  },
-  {
-    path: '/user-detail/:id',
-    component: UserDetail
-  },
-  {
-    path: '/user-edit',
-    component: UserEdit
-  },
-  {
-    path: '/user-start',
-    component: UserStart
+    component: User,
+    children: [{
+        path: '',
+        component: UserStart
+      },
+      {
+        path: '/user/:id',
+        component: UserDetail
+      },
+      {
+        path: '/user/:id/edit',
+        component: UserEdit
+      }, {
+        path: ""
+      }
+    ]
   }
+
+
+
 
 
 ]
